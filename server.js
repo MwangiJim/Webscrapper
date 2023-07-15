@@ -1,5 +1,7 @@
 import cheerio from 'cheerio'
 import axios from 'axios'
+import express from 'express'
+const app = express()
 
 const getPostTitles = async()=>{
     try {
@@ -18,5 +20,7 @@ const getPostTitles = async()=>{
         throw error
     }
 }
+
+app.listen(8000,()=>console.log('App is running'))
 
 getPostTitles().then(postTitles => console.log(postTitles))
