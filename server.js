@@ -22,6 +22,7 @@ const getPostTitles = async()=>{
 }
 
 app.get('/',(req,res)=>{
+    res.send('Web Scapper For Old Reddit Website')
     getPostTitles().then(postTitles => res.status(200).json({status:'ok',data:postTitles}))  
 })
 app.listen(8000,()=>console.log('App is running'))
